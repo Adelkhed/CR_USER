@@ -3,9 +3,9 @@ from user import User
 app = Flask(__name__)
 
 
-@app.route("/user/new")
+@app.route("/")
 def new_user():
-    return render_template("new_user.html")
+    return redirect("/users")
 
 @app.route("/user/new", methods=['POST'])
 def create_user():
