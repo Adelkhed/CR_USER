@@ -3,7 +3,6 @@ from user import User
 app = Flask(__name__)
 
 
-
 @app.route("/user/new")
 def new_user():
     return render_template("new_user.html")
