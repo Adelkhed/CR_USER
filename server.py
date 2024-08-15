@@ -4,9 +4,11 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def new_user():
+def users():
     return redirect("/users")
-
+@app.route("/user/new")
+def new():
+     return render_template("new_user.html")
 @app.route("/user/new", methods=['POST'])
 def create_user():
        data = {
