@@ -9,7 +9,7 @@ def users():
 @app.route("/user/new")
 def new():
      return render_template("new_user.html")
-@app.route("/user/new", methods=['POST'])
+@app.route("/user/create", methods=['POST'])
 def create_user():
        data = {
         "first_name": request.form["first_name"],
