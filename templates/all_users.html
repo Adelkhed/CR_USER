@@ -7,12 +7,23 @@
 
     <title>All Users</title>
 </head>
-<body>
-    <h1 class="mb-3 text-center">All Users</h1>
+<body >
+    <header>
+        <div class="navbar" style="background-color: #1877F2;">
+            <div class="container d-flex justify-content-between align-items-center">
+                <h1 class="text-light mx-auto">All Users</h1>
+                <a href="/" class="text-light ms-auto btn btn-secondary">
+                    <strong>Add a New User</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    
 
     <div class="album py-5 bg-light">
         <div class="table-responsive col-8 mx-auto bg-dark text-primary p-5 rounded">
-            <a href="/user/new" class="btn btn-success mb-3 text-center">Add User</a>
+           
             <table class="table table-striped text-center table-hover">
                 <thead>
                     <tr>
@@ -21,6 +32,7 @@
                         <th>Last Name</th>
                         <th>Email</th>
                         <th>Created_at</th>
+                        <th>Actions</th>
                         
                     </tr>
                 </thead>
@@ -32,11 +44,21 @@
                             <td>{{user.last_name}}</td>
                             <td>{{user.email}}</td>
                             <td>{{user.created_at}}</td>
+                            <td>
+                                
+                                <a href="/users/{{user.id}}/edit" class="btn btn-success mb-3 text-center">Edit</a>
+                                <a href=" /users/delete/{{user.id}}" class="btn btn-danger mb-3 text-center">Delete</a>
+                                <a href=" /users/{{user.id}}" class="btn btn-primary mb-3 text-center">Show</a>
+                                
+
+                               
+                            </td>
                             
                        </tr>
                     {% endfor %}
                 </tbody>
             </table>
+            <a href="/user/new" class="btn btn-success mb-3 text-center">Add a New User</a>
         </div>
         
     </div>

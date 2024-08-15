@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>{{user.first_name}} {{user.last_name}}</title>
+</head>
+<body>
+    <header>
+        <div class="navbar" style="background-color: #1877F2;">
+            <div class="container d-flex justify-content-between align-items-center">
+                <h1 class="text-light mx-auto">All Users</h1>
+                <a href="/" class="text-light ms-auto">
+                    <strong>Add a New User</strong>
+                </a>
+            </div>
+        </div>
+    </header>
+   <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <p ><strong>Full Name :</strong> {{user.first_name}} {{user.last_name}}</p>
+                <p ><strong>Email :</strong>> {{user.email}}</p>
+                <p ><strong>Created on :</strong> {{user.created_at}}</p>
+                <p><strong>Last Updated On :</strong> {{updated}}</p>
+            </div>
+        </div>
+        <div class="mt-3">
+            <a href="/users/{{user.id}}/edit" class="btn btn-primary">Edit</a>
+            <a href="/users/delete/{{user.id}}" class="btn btn-danger">Delete</a>
+        </div>
+   </div>
+</body>
+</html>
