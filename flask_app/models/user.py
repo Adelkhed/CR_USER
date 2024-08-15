@@ -1,5 +1,5 @@
-from flask import request
-from mysqlconnection import connectToMySQL, DB
+
+from flask_app.config.mysqlconnection import connectToMySQL, DB
 
 class User:
     def __init__(self,data):
